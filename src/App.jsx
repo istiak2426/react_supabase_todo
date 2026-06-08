@@ -58,11 +58,14 @@ function App() {
     setLoading(false);
   };
 
-  const loginWithGoogle = async () => {
-    await supabase.auth.signInWithOAuth({
-      provider: "google",
-    });
-  };
+const loginWithGoogle = async () => {
+  await supabase.auth.signInWithOAuth({
+    provider: "google",
+    options: {
+      redirectTo: window.location.origin,
+    },
+  });
+};
 
   const logout = async () => {
     await supabase.auth.signOut();
