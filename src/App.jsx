@@ -62,7 +62,7 @@ const loginWithGoogle = async () => {
   await supabase.auth.signInWithOAuth({
     provider: "google",
     options: {
-      redirectTo: window.location.origin,
+      redirectTo: "https://react-supabase-todo-lemon.vercel.app",
     },
   });
 };
